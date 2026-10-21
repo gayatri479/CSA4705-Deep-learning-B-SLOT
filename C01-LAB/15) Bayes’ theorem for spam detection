@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+
+p_spam = 0.3
+p_prize_spam = 0.7
+p_prize_notspam = 0.1
+
+posterior = (p_prize_spam * p_spam) / (
+    p_prize_spam * p_spam +
+    p_prize_notspam * (1 - p_spam)
+)
+
+print("Probability of Spam:", posterior)
+
+plt.bar(["Prior", "Posterior"], [p_spam, posterior])
+plt.ylabel("Probability")
+plt.title("Spam Probability")
+plt.show()
