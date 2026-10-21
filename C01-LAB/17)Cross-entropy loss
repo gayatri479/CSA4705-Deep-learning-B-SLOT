@@ -1,0 +1,13 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+Y = np.array([1, 0, 0])
+P = np.array([0.7, 0.2, 0.1])
+
+loss = -np.sum(Y * np.log(P))
+print("Cross-Entropy Loss:", loss)
+
+plt.bar(["Cat", "Dog", "Bird"], Y, label="Actual")
+plt.bar(["Cat", "Dog", "Bird"], P, alpha=0.6, label="Predicted")
+plt.legend()
+plt.show()
