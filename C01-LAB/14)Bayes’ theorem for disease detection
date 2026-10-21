@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+
+p_d = 0.02
+p_pos_d = 0.95
+p_pos_notd = 0.05
+
+posterior = (p_pos_d * p_d) / (
+    p_pos_d * p_d + p_pos_notd * (1 - p_d)
+)
+
+print("Probability of Disease after Positive Test:", posterior)
+
+plt.bar(["Prior", "Posterior"], [p_d, posterior])
+plt.ylabel("Probability")
+plt.title("Disease Probability")
+plt.show()
