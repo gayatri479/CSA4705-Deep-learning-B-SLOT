@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+C = np.array([[5, 2],
+              [2, 2]])
+
+values, vectors = np.linalg.eig(C)
+i = np.argmax(values)
+
+print("Eigenvalues:", values)
+print("Largest Eigenvalue:", values[i])
+print("Principal Eigenvector:", vectors[:, i])
+
+for j in range(2):
+    plt.quiver(0, 0, vectors[0, j], vectors[1, j],
+               angles="xy", scale_units="xy", scale=1)
+
+plt.xlim(-1.2, 1.2)
+plt.ylim(-1.2, 1.2)
+plt.grid()
+plt.title("Principal Directions")
+plt.show()
