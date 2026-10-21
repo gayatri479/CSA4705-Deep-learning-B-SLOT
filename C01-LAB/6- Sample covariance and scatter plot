@@ -1,0 +1,13 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = [2, 4, 6, 8, 10]
+y = [35, 45, 60, 75, 85]
+
+print("Sample Covariance:", np.cov(x, y)[0, 1])
+
+plt.scatter(x, y)
+plt.xlabel("Study Hours")
+plt.ylabel("Marks")
+plt.title("Study Hours vs Marks")
+plt.show()
